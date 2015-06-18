@@ -14,7 +14,7 @@ async.waterfall([
 
 		function(cb) {
 			debugok("1");
-			request.pipe(request({url: "http://www.proxynova.com/proxy-server-list/country-"+countrycode })).pipe( 
+			request({url: "http://www.proxynova.com/proxy-server-list/country-"+countrycode }, 
 				function (error, response, body) { 
 					if(!error && response.statusCode == 200) {
 						var S = cheerio.load(body);
